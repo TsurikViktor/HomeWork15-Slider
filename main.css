@@ -1,0 +1,149 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(20, 193, 199, 0.678);
+}
+.sliderConteiner {
+    max-width: 1000px;
+    min-width: 320px;
+    position: relative;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    border: 2px solid rgb(5, 180, 43);
+    background-color: white;
+}
+.sliderList {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+    left: 0;
+    top: 0;
+} 
+.sliderElement {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    display: block;
+}
+.sliderElement img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.sliderArrowLeft,
+.sliderArrowRight {
+    width: 75px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0.9;
+    z-index: 4;
+  }
+.arrowLeft,
+.arrowRight {
+    width: 40px;
+    height: 60px;
+    opacity: 0.5;
+    z-index: 3;
+} 
+.sliderArrowLeft {
+    left: 0px;
+    top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sliderArrowRight {
+    right: 0px;
+    top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sliderArrowLeft:hover > .arrowLeft,
+.sliderArrowRight:hover > .arrowRight {
+    opacity: 1;
+}
+.sliderArrowRight:hover {
+    opacity: 1.0;
+    border-radius: 20px 0 0 20px;
+    background-color: rgba(8, 8, 8, 0.5); 
+}
+.sliderArrowLeft:hover {
+    opacity: 1.0;
+    border-radius: 0 20px 20px 0;
+    background-color: rgba(8, 8, 8, 0.5); ;
+}
+.none {
+    display: none;
+}
+.block {
+    display: block;
+}
+.center{
+    animation-name: center;
+    animation-duration: 2s;
+}
+.right {
+    animation-name: right;
+    animation-duration: 2s;
+}
+.left {
+    animation-name: left ;
+    animation-duration: 2s;
+}
+
+@keyframes left {
+    from {
+        transform: rotateX(90deg) rotateY(90deg);
+    }
+    to {
+        transform: rotateX(0deg) rotateY(0deg);
+    } 
+    from {
+        opacity: 0.5
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes right {
+    from {
+        transform: rotateX(270deg) rotateY(90deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(0deg);
+    }
+    from {
+        opacity: 0.5
+    }
+    to {
+        opacity: 1
+    }   
+}
+
+@keyframes center {
+    from {
+        transform: rotateX(90deg) rotateY(270deg) rotateZ(90deg);
+    }
+    to {
+        transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
+    }
+    from {
+        opacity: 0.5
+    }
+    to {
+        opacity: 1
+    }   
+}
